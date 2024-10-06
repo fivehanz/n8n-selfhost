@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  #### jsmx.org ####
+  n8n_jsmx:
+    image: n8nio/n8n:1.62.1
+    deploy:
+      replicas: 2
+      labels:
+        - "n8n.domain=automate.jsmx.org"
+    env_file:
+      - .env.jsmx.org
+    ports:
+      - "56111:5678"
+    volumes:
+      - /mnt/glusterfs/automate.jsmx.org:/home/node/.n8n
+  ###################
+
+  #### junox.net ####
+  n8n_junox:
+    image: n8nio/n8n:1.62.1
+    deploy:
+      replicas: 2
+      labels:
+        - "n8n.domain=automate.junox.net"
+    env_file:
+      - .env.junox.net
+    ports:
+      - "57111:5678"
+    volumes:
+      - /mnt/glusterfs/automate.junox.net:/home/node/.n8n
+  ####################
+
