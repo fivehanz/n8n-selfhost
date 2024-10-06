@@ -18,8 +18,8 @@ prod-rm:
 
 
 prod-nginx-link-common:
-	ln -s ${shell pwd}/nginx/common.conf /etc/nginx/sites-enabled/
-	ln -s ${shell pwd}/nginx/proxy_common.conf /etc/nginx/sites-enabled/
+	ln -s ${shell pwd}/nginx/common.conf /etc/nginx/
+	ln -s ${shell pwd}/nginx/proxy_common.conf /etc/nginx/
 
 prod-nginx-link:
 	ln -s ${shell pwd}/nginx/automate.jsmx.org.conf /etc/nginx/sites-enabled/
